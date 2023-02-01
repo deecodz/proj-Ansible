@@ -20,8 +20,6 @@
      path: /opt/tomcat10
      state: directory 
      mode: 0777 
-     owner: tomcat
-     group: tomcat
 
   - name: Extract package and move to tomcat directory
     unarchive: 
