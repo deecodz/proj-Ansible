@@ -1,0 +1,27 @@
+---
+ -name: Install Apache tomcat on servers
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: Install Java-jdk
+    yum:
+     name: java-1.8*
+     state: present
+
+  - name: Download Tomcat Packages
+    get_url:
+     url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.27/bin/apache-tomcat-10.0.27.tar.gz
+     dest: /opt/
+     mode: 0777
+
+  - name: Extract package and move to tomcat directory
+    unarchive: 
+      src: /opt/apache-tomcat-10.0.27.tar.gz
+     dest: /opt/tomcat
+     remote_src: yes 
+
+  - name: Start Tomcat Services
+    shell: nohup /usr/local/apache-tomcat-10.0.27/bin/startup.sh
+    
+...
