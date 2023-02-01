@@ -19,6 +19,7 @@
     file:
      path: /opt/tomcat
      state: directory 
+     remote_src: yes
      moe: 0777
 
   - name: Extract package and move to tomcat directory
