@@ -28,6 +28,6 @@
       remote_src: yes 
 
   - name: Start Tomcat Services
-    shell: nohup /usr/local/apache-tomcat-10.0.27/bin/startup.sh
+    shell: nohup /opt/tomcat10/apache-tomcat-10.0.27/bin/startup.sh
     
 ...
