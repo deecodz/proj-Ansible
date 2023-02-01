@@ -1,5 +1,5 @@
 ---
- -name: Install Apache tomcat on servers
+- name: Install Apache tomcat on servers
   hosts: all
   become: yes
 
@@ -25,8 +25,8 @@
   - name: Extract package and move to tomcat directory
     unarchive: 
       src: /opt/apache-tomcat-10.0.27.tar.gz
-     dest: /opt/tomcat
-     remote_src: yes 
+      dest: /opt/tomcat
+      remote_src: yes 
 
   - name: Start Tomcat Services
     shell: nohup /usr/local/apache-tomcat-10.0.27/bin/startup.sh
