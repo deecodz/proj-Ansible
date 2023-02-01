@@ -15,6 +15,12 @@
      dest: /opt/
      mode: 0777
 
+  - name: Creating new directory
+    file:
+     path: /opt/tomcat
+     state: directory 
+     moe: 0777
+
   - name: Extract package and move to tomcat directory
     unarchive: 
       src: /opt/apache-tomcat-10.0.27.tar.gz
